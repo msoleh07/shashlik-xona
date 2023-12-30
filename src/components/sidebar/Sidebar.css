@@ -1,0 +1,112 @@
+.main_container {
+  display: flex;
+}
+
+.sidebar {
+  background: rgb(0, 7, 61);
+  color: #fff;
+  height: 100vh;
+  user-select: none;
+  position: relative;
+}
+
+.top_section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 10px;
+  position: relative;
+}
+
+.top_section a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.top_section a h1.logo_text {
+  font-size: 20px;
+  color: #fff;
+}
+
+.top_section a img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+.top_section .section_bars {
+  position: absolute;
+  top: 0px;
+  right: -35px;
+  background: rgb(0, 7, 61);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 0 0 15px 0;
+}
+
+.bars_border svg {
+  font-size: 20px;
+}
+
+.section_bars svg {
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.routes_link {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  gap: 10px;
+  text-decoration: none;
+  padding: 15px 10px;
+  transition: all 0.2s cubic-bezier(0.6, -0.28, 0.735 0.045);
+}
+
+.nav_link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.routes_link:hover {
+  border-right: 4px solid #fff;
+  transition: all 0.2s cubic-bezier(0.6, -0.28, 0.735 0.045);
+  background: rgb(45, 51, 89);
+}
+
+.active {
+  border-right: 4px solid #fff;
+  background: rgb(45, 51, 89);
+}
+
+.routes_link .icon svg {
+  font-size: 22px;
+}
+
+.link_text {
+  white-space: nowrap;
+}
+
+.sidebar .bottom_section {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.bottom_section a {
+  display: flex;
+  align-items: center;
+}
+
+.main_container {
+  flex: 1;
+  height: 100vh;
+  background: #d2d1fa;
+}
