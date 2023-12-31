@@ -4,3 +4,19 @@
   box-sizing: border-box;
   font-family: sans-serif;
 }
+
+.all_header {
+  flex: 1;
+  height: 90px;
+  background: rgb(0, 7, 61);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+.all_header h1 {
+  color: #fff;
+}

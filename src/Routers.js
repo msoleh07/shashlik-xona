@@ -1,12 +1,12 @@
 import React from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Cart from "./pages/Cart";
-import Massage from "./pages/Massage";
-import Settings from "./pages/Settings";
+import Home from "./pages/home/Home";
+import About from "./pages/about/About";
+import Cart from "./pages/cart/Cart";
+import Massage from "./pages/massage/Massage";
+import Settings from "./pages/settings/Settings";
 import Sidebar from "./components/sidebar/Sidebar";
-import Board from "./pages/Board";
+import Board from "./pages/board/Board";
 import Logout from "./pages/logout/Logout";
 
 const Routers = () => {

@@ -48,10 +48,12 @@
   justify-content: center;
   cursor: pointer;
   border-radius: 0 0 15px 0;
+  z-index: 1;
 }
 
 .bars_border svg {
   font-size: 20px;
+  cursor: pointer;
 }
 
 .section_bars svg {

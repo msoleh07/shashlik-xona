@@ -5,6 +5,7 @@ import menu from "../../static/menuBar";
 import { Link, NavLink } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import { IoLogOutOutline } from "react-icons/io5";
+import { IoMdClose } from "react-icons/io";
 
 const Sidebar = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,10 +40,14 @@ const Sidebar = ({ children }) => {
               src="https://www.krumpli.co.uk/wp-content/uploads/2022/11/Chicken-Shashlik-Kebab-04-735x735.jpg"
               className="logo"
             />
-            {isOpen && <h1 className="logo_text">A.Rahimov</h1>}
+            {isOpen && <h1 className="logo_text">A.Abdulhayev</h1>}
           </Link>
           <div className={isOpen ? "bars_border" : "section_bars"}>
-            <FaBars onClick={toggle} />
+            {isOpen ? (
+              <IoMdClose onClick={toggle} />
+            ) : (
+              <FaBars onClick={toggle} />
+            )}
           </div>
         </div>
         <section className="routes">
