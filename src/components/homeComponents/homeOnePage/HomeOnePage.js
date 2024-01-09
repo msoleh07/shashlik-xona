@@ -1,10 +1,8 @@
 import React, { memo } from "react";
 import "./HomeOnePage.css";
-import { useNavigate, useLocation } from "react-router-dom";
 import homeDataItems from "../../../static/homeData";
 
 const HomeOnePage = () => {
-  let naviget = useLocation();
   return (
     <div className="home_one_container scroll">
       {homeDataItems?.map((item, index) => (
@@ -20,6 +18,10 @@ const HomeOnePage = () => {
                 </figure>
                 <div className="img_title">
                   <p>{i.imgTitle}</p>
+                  <div className="price_container">
+                    <span>Narxi:</span>
+                    <p>{i.price} ming so'm</p>
+                  </div>
                 </div>
               </div>
             ))}

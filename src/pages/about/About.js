@@ -1,5 +1,6 @@
 import React, { memo } from "react";
 import "./About.css";
+import aboutData from "../../static/aboutData";
 
 import torgamchi from "../../imgs/torgamchi shashlik.jpg";
 
@@ -10,28 +11,32 @@ const About = () => {
         <h1>Biz haqimizda</h1>
       </div>
       <div className="about_data_container">
-        <div className="about_data_card">
-          <div className="about_data_img">
-            <img src={torgamchi} alt="" />
+        {aboutData?.map((item, index) => (
+          <div key={index} className="about_data_card">
+            <div className="about_data_img">
+              <img src={item.img} alt="" />
+            </div>
+            <div className="about_data_title_container">
+              <h2>{item.title}</h2>
+              {item?.allData?.map((i, index) => (
+                <ul key={index}>
+                  <li>
+                    <span>Narxi:</span>
+                    <p>{i.price} ming so'm</p>
+                  </li>
+                  <li>
+                    <span>{i.grTitle}:</span>
+                    <p>{i.gr} </p>
+                  </li>
+                  <li>
+                    <span>Dastavka narxi:</span>
+                    <p>15 ming so'm </p>
+                  </li>
+                </ul>
+              ))}
+            </div>
           </div>
-          <div className="about_data_title_container">
-            <h2>Torgamchi shashlik</h2>
-            <ul>
-              <li>
-                <span>Narxi:</span>
-                <p>12 so'm</p>
-              </li>
-              <li>
-                <span>Gr:</span>
-                <p>125</p>
-              </li>
-              <li>
-                <span>Dast narxi:</span>
-                <p>15 so'm</p>
-              </li>
-            </ul>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );

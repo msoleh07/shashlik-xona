@@ -12,10 +12,12 @@ const homeData = [
       {
         img: torgamchiShashlik,
         imgTitle: "Torg'amchi shashlik",
+        price: 12,
       },
       {
         img: qiymaShashlik,
         imgTitle: "Qiyma shashlik",
+        price: 11,
       },
     ],
   },
@@ -25,18 +27,22 @@ const homeData = [
       {
         img: kokChoy,
         imgTitle: "Ko'k choy",
+        price: 3,
       },
       {
         img: qoraChoy,
         imgTitle: "Qora choy",
+        price: 3,
       },
       {
         img: limonChoy,
         imgTitle: "Limonli choy",
+        price: 6,
       },
       {
         img: shirinChoy,
         imgTitle: "Shirin choy",
+        price: 6,
       },
     ],
   },

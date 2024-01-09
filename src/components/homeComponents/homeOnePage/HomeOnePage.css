@@ -66,11 +66,29 @@ figure img:hover {
   background: rgb(0, 7, 61);
   display: flex;
   align-items: center;
-  padding: 0 5px;
+  padding: 0 10px;
+  justify-content: space-between;
 }
 
 .img_title p {
   font-family: "Cookie", cursive;
   color: #fff;
   font-size: 2em;
+}
+
+.price_container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.price_container span {
+  color: #fff;
+  font-size: 17px;
+}
+
+.price_container p {
+  font-size: 19px;
+  color: #9bf873;
+  letter-spacing: 1.5px;
 }
