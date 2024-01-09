@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import React, { memo, useState } from "react";
 import "./Sidebar.css";
 import menu from "../../static/menuBar";
 import { Link, NavLink } from "react-router-dom";
@@ -9,29 +8,14 @@ import { IoMdClose } from "react-icons/io";
 
 const Sidebar = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
-
   const toggle = () => setIsOpen(!isOpen);
-
-  const showAnimation = {
-    hidden: {
-      width: 0,
-      opacity: 0,
-      transition: {
-        duration: 0.5,
-      },
-    },
-    show: {
-      width: "auto",
-      opacity: 1,
-      transition: {
-        duration: 0.2,
-      },
-    },
-  };
   return (
     <div className="main_container">
-      <motion.div
-        animate={{ width: isOpen ? "300px" : "80px" }}
+      <div
+        style={{
+          width: isOpen ? "300px" : "80px",
+          transition: isOpen ? "all .2s linear" : "all .3s linear",
+        }}
         className="sidebar"
       >
         <div className="top_section">
@@ -53,56 +37,32 @@ const Sidebar = ({ children }) => {
         <section className="routes">
           {menu?.map((i, index) => (
             <NavLink
-              activeClassName="active"
-              to={i.link}
               key={index}
+              to={i.link}
               className={isOpen ? " routes_link" : "nav_link routes_link"}
             >
               <div className="icon">{i.icon}</div>
-              <AnimatePresence>
-                {isOpen && (
-                  <motion.div
-                    variants={showAnimation}
-                    initial="hidden"
-                    animate="show"
-                    exit="hidden"
-                    className="link_text"
-                  >
-                    {i.title}
-                  </motion.div>
-                )}
-              </AnimatePresence>
+
+              {isOpen && <div className="link_text">{i.title}</div>}
             </NavLink>
           ))}
         </section>
         <div className="bottom_section">
           <NavLink
-            activeClassName="active"
             to={"/logout"}
             className={isOpen ? " routes_link" : "nav_link routes_link"}
           >
             <div className="icon">
               <IoLogOutOutline />
             </div>
-            <AnimatePresence>
-              {isOpen && (
-                <motion.div
-                  variants={showAnimation}
-                  initial="hidden"
-                  animate="show"
-                  exit="hidden"
-                  className="link_text"
-                >
-                  Log out
-                </motion.div>
-              )}
-            </AnimatePresence>
+
+            {isOpen && <div className="link_text">Log out</div>}
           </NavLink>
         </div>
-      </motion.div>
+      </div>
       <main className="main_container">{children}</main>
     </div>
   );
 };
 
-export default Sidebar;
+export default memo(Sidebar);

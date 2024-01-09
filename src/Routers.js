@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Home from "./pages/home/Home";
 import About from "./pages/about/About";
@@ -30,4 +30,4 @@ const Routers = () => {
   );
 };
 
-export default Routers;
+export default memo(Routers);

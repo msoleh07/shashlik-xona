@@ -1,7 +1,14 @@
-import React from "react";
+import React, { memo } from "react";
+import "./Board.css";
 
 const Board = () => {
-  return <div>Board</div>;
+  return (
+    <div className="board_page scroll">
+      <div className="all_header">
+        <h1>Zakaz berish</h1>
+      </div>
+    </div>
+  );
 };
 
-export default Board;
+export default memo(Board);

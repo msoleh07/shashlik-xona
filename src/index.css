@@ -4,10 +4,21 @@
   box-sizing: border-box;
   font-family: sans-serif;
 }
+/* 
+.padd {
+  padding: 90px 3%;
+} */
 
-.all_header {
+.scroll {
   flex: 1;
-  height: 90px;
+  max-height: 100vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.scroll .all_header {
+  flex: 1;
+  height: 91px;
   background: rgb(0, 7, 61);
   display: flex;
   align-items: center;
@@ -15,8 +26,10 @@
   position: sticky;
   top: 0;
   left: 0;
+  border-bottom: 1px solid #fff;
 }
 
 .all_header h1 {
   color: #fff;
+  font-size: 25px;
 }

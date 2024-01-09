@@ -1,7 +1,14 @@
-import React from "react";
+import React, { memo } from "react";
+import "./Cart.css";
 
 const Cart = () => {
-  return <div>Cart</div>;
+  return (
+    <div className="cart_page scroll">
+      <div className="all_header">
+        <h1>Sotib olingan mahsulotlar</h1>
+      </div>
+    </div>
+  );
 };
 
-export default Cart;
+export default memo(Cart);
