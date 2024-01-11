@@ -3,8 +3,8 @@
   padding: 10px;
   display: grid;
   grid-template-columns: repeat(3, auto);
-  gap: 20px;
-  justify-content: center;
+  gap: 30px;
+  justify-content: space-evenly;
 }
 
 .about_data_card {
@@ -77,4 +77,22 @@
   font-family: "Cookie", cursive;
   color: rgb(6, 2, 70);
   width: 50%;
+}
+
+.about_data_card button {
+  padding: 5px 17px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+  background: rgb(0, 7, 61);
+  font-size: 17px;
+  transition: all 0.3s linear;
+  font-family: "Cookie", cursive;
+}
+
+.about_data_card button:hover {
+  background: rgb(6, 18, 106);
+  color: #9bf873;
 }

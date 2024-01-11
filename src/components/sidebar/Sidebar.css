@@ -1,11 +1,13 @@
 .main_container {
   display: flex;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .sidebar {
   background: rgb(0, 7, 61);
   color: #fff;
-  height: 100vh;
+  height: 100%;
   user-select: none;
   position: relative;
 }

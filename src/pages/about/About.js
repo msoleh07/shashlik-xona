@@ -1,10 +1,16 @@
 import React, { memo } from "react";
 import "./About.css";
 import aboutData from "../../static/aboutData";
-
-import torgamchi from "../../imgs/torgamchi shashlik.jpg";
+import { useDispatch, useSelector } from "react-redux";
+import { ADD_TO_CART } from "../../redux/addToCart";
 
 const About = () => {
+  const store = useSelector((s) => s.addToCart);
+  const dispatch = useDispatch();
+  console.log(store);
+  const add = (product) => {
+    dispatch(ADD_TO_CART({ product }));
+  };
   return (
     <div className="about_page scroll">
       <div className="all_header">
@@ -35,6 +41,7 @@ const About = () => {
                 </ul>
               ))}
             </div>
+            <button onClick={() => add(item)}>Sotib olish</button>
           </div>
         ))}
       </div>
