@@ -89,32 +89,6 @@ const CartNewData = () => {
               </div>
             </div>
           ))}
-          {/* {cartItems?.map((item, index) => (
-            <div key={index} className="about_data_card">
-              <div className="about_data_img">
-                <img src={item.img} alt="" />
-              </div>
-              <div className="about_data_title_container">
-                <h2>{item.title}</h2>
-                {item?.allData?.map((i, index) => (
-                  <ul key={index}>
-                    <li>
-                      <span>Narxi:</span>
-                      <p>{i.price} ming so'm</p>
-                    </li>
-                    <li>
-                      <span>{i.grTitle}:</span>
-                      <p>{i.gr} </p>
-                    </li>
-                    <li>
-                      <span>Dastavka narxi:</span>
-                      <p>15 ming so'm </p>
-                    </li>
-                  </ul>
-                ))}
-              </div>
-            </div>
-          ))} */}
         </div>
         <div className="cart_price_container">
           <div className="cart_total_price_container"></div>

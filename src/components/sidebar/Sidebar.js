@@ -5,8 +5,11 @@ import { Link, NavLink } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import { IoLogOutOutline } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
+import { useSelector } from "react-redux";
 
 const Sidebar = ({ children }) => {
+  const cartItems = useSelector((s) => s.addToCart);
+  let cartLength = cartItems.reduce((a, b) => a + b.quantity, 0);
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
   return (
@@ -41,7 +44,14 @@ const Sidebar = ({ children }) => {
               to={i.link}
               className={isOpen ? " routes_link" : "nav_link routes_link"}
             >
-              <div className="icon">{i.icon}</div>
+              <div className="icon">
+                {i.icon}
+                {cartLength > 0 && (
+                  <span className={i?.class}>
+                    {i?.link === "/cart" && cartLength}
+                  </span>
+                )}
+              </div>
 
               {isOpen && <div className="link_text">{i.title}</div>}
             </NavLink>

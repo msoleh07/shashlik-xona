@@ -96,6 +96,20 @@
   font-size: 22px;
 }
 
+.routes_link .icon {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 1px;
+  align-items: center;
+}
+
+.length {
+  padding: 3px 7px;
+  border-radius: 50px;
+  font-size: 13px;
+  background: #d2d1fa;
+  color: #000;
+}
 .link_text {
   white-space: nowrap;
 }

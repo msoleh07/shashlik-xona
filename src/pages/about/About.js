@@ -1,16 +1,31 @@
-import React, { memo } from "react";
+import React, { memo, useState } from "react";
 import "./About.css";
 import aboutData from "../../static/aboutData";
 import { useDispatch, useSelector } from "react-redux";
-import { ADD_TO_CART } from "../../redux/addToCart";
+import {
+  ADD_TO_CART,
+  DecrementCart,
+  IncrementCart,
+  RemoveFromCart,
+} from "../../redux/addToCart";
+import { FaMinus, FaPlus, FaTrash } from "react-icons/fa";
 
 const About = () => {
-  const store = useSelector((s) => s.addToCart);
   const dispatch = useDispatch();
-  console.log(store);
+  const cartData = useSelector((s) => s.addToCart).map((i) => i.id);
   const add = (product) => {
     dispatch(ADD_TO_CART({ product }));
   };
+  function incrementCart(id) {
+    dispatch(IncrementCart({ id }));
+  }
+  function decrementCart(id) {
+    dispatch(DecrementCart({ id: id }));
+  }
+  function deleteCart(id) {
+    dispatch(RemoveFromCart(id));
+  }
+
   return (
     <div className="about_page scroll">
       <div className="all_header">
@@ -41,7 +56,27 @@ const About = () => {
                 </ul>
               ))}
             </div>
-            <button onClick={() => add(item)}>Sotib olish</button>
+            {cartData.some((i) => i === item.id) ? (
+              <div className="about_btn_cards">
+                <div className="about_buttons_cards ">
+                  <button onClick={() => decrementCart(item.id)}>
+                    <FaMinus />
+                  </button>
+                  <span className="quantity">
+                    {item.quantity}
+                    ta
+                  </span>
+                  <button onClick={() => incrementCart(item.id)}>
+                    <FaPlus />
+                  </button>
+                </div>
+                <button onClick={() => deleteCart(item.id)}>
+                  <FaTrash />
+                </button>
+              </div>
+            ) : (
+              <button onClick={() => add(item)}>Sotib olish</button>
+            )}
           </div>
         ))}
       </div>

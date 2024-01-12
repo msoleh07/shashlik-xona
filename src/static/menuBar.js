@@ -25,6 +25,7 @@ const menuData = [
     icon: <PiShoppingCartLight />,
     title: "Sotib olingan mahsulotlar",
     link: "/cart",
+    class: "length",
   },
   {
     icon: <MdOutlineMessage />,

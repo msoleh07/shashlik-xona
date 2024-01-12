@@ -10,6 +10,7 @@
 .about_data_card {
   width: 300px;
   overflow: hidden;
+  height: 450px;
   border-radius: 10px;
   box-shadow: 0 0 5px rgb(6, 2, 70);
 }
@@ -95,4 +96,36 @@
 .about_data_card button:hover {
   background: rgb(6, 18, 106);
   color: #9bf873;
+}
+
+/* cart buttons */
+
+.about_btn_cards {
+  flex: 1;
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about_buttons_cards {
+  flex: 1;
+}
+
+.about_btn_cards button,
+.about_buttons_cards button {
+  padding: 5px 17px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+  background: rgb(0, 7, 61);
+  font-size: 17px;
+  transition: all 0.3s linear;
+  font-family: "Cookie", cursive;
+}
+
+.about_buttons_cards button svg {
+  font-size: 12px;
 }
